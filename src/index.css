@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+/* ============================================
+   Compass — Simple, Powerful Astrology for Beginners
+   Warm, quiet cosmic theme (night garden / observatory)
+   ============================================ */
+
+:root {
+  /* Core palette — deep night with warm gold accents */
+  --bg: #0a0f1c;
+  --bg-elev: #121a2e;
+  --surface: #1a253f;
+  --border: #2a3855;
+  --text: #c8d1e0;
+  --text-dim: #8a96b0;
+  --text-strong: #f0e6d2; /* warm parchment */
+
+  /* Accent — soft antique gold + gentle lavender for highlights */
+  --accent: #c5a26f;
+  --accent-warm: #d4af37;
+  --accent-soft: #a78c5e;
+  --highlight: #9a8cd4; /* soft lavender for transits, emphasis */
+
+  /* Semantic */
+  --shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.6);
+  --shadow-soft: 0 4px 15px -5px rgba(0, 0, 0, 0.4);
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Element colors (for wheel & cards) */
+  --fire: #e07a5f;
+  --earth: #81b29a;
+  --air: #a8b5d6;
+  --water: #6b9ac4;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Beautiful, readable prose for explanations */
+.prose {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+.prose p + p {
+  margin-top: 0.9em;
+}
+
+/* Card and surface styles */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+  border-color: #3a4a6b;
+}
+
+/* Input styles — calm and spacious */
+.input {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  color: var(--text-strong);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(197, 162, 111, 0.15);
+}
+
+.input::placeholder {
+  color: var(--text-dim);
+}
+
+/* Buttons — warm, clear, not shouty */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #0a0f1c;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--accent-warm);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--surface);
+  border-color: #3a4a6b;
+  color: var(--text-strong);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-dim);
+  padding: 8px 14px;
+}
+
+.btn-ghost:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+/* Wheel & visual elements */
+.glyph {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum";
+}
+
+/* Planet / sign pills */
+.placement {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: all 0.15s ease;
+}
+
+.placement:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+/* Inspector / detail panel */
+.inspector {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* Soft divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+
+/* Accessibility & focus */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Responsive typography helpers */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Small utility for the wheel SVG */
+.wheel text {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  fill: var(--text-dim);
+}
+
+.wheel .planet-label {
+  fill: var(--text-strong);
+  font-weight: 500;
+}

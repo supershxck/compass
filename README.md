@@ -1,77 +1,42 @@
 # Compass
 
-A simple yet powerful astrology tool for beginners.
+A beginner astrology instrument. Enter birth data and explore your chart — Swiss Ephemeris, warm, visual, entirely in the browser.
 
-Enter your birth data and explore your chart — accurate (Swiss Ephemeris), warm, visual, and genuinely useful. Everything runs locally in your browser.
+| | |
+|---|---|
+| **Status** | instrument |
+| **House** | Oracle |
+| **Stack** | TypeScript, Vite, Swiss Ephemeris (Moshier / WASM) |
 
-## Using the Standalone Version (Recommended)
+## Standalone (recommended)
 
-This is the intended way to use Compass:
+One self-contained HTML file. Offline. No server.
 
-1. Clone or download the repository
-2. Install dependencies:
-   ```bash
-   cd "Projects/Astro Projects/compass"
-   npm install
-   ```
-3. Build the single-file version:
-   ```bash
-   npm run build:standalone
-   ```
-4. Open `dist/compass.html` in any modern browser (double-click the file or drag it into your browser).
+```bash
+npm install
+npm run build:standalone
+```
 
-You now have one self-contained HTML file (~866 KB) that works completely offline. No server, no installation required for end users.
+Open `dist/compass.html` in any modern browser.
 
 ## Development
-
-For active development:
 
 ```bash
 npm run dev
 ```
 
-This starts the normal Vite dev server with hot reloading.
+## What’s inside
 
-## What’s Inside
-
-- Accurate planetary positions via Swiss Ephemeris (Moshier mode, runs in the browser via WebAssembly)
-- Interactive chart wheel showing both natal positions and current transits
-- The Big Three with thoughtful, balanced interpretations
-- Live sky view with personal transits relative to your chart
+- Planetary positions via Swiss Ephemeris (Moshier mode, WASM)
+- Interactive chart wheel: natal positions and current transits
+- The Big Three with balanced interpretations
+- Live sky view with personal transits
 - Body & Sky — traditional somatic correspondences
 - Guided reflection prompts with private auto-saving notes
 - Save and load multiple charts locally
-- Calm, beginner-friendly learning reference
 
-## Notes
-
-- All data stays in your browser (localStorage).
-- The standalone build uses `vite-plugin-singlefile` to produce one HTML file.
-- For maximum self-containment, a few small assets are inlined during the standalone build.
+All data stays in the browser (`localStorage`). The standalone build uses `vite-plugin-singlefile`.
 
 ## License
 
-MIT — Free for personal and exploratory use.
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+MIT — free for personal and exploratory use.

@@ -2,18 +2,17 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { viteSingleFile } from 'vite-plugin-singlefile'
 
-// https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  base: mode === 'standalone' ? './' : '/',
   plugins: [
     react(),
     viteSingleFile({
-      // We want one big HTML. The WASM will be the main challenge.
+      // One HTML file. WASM inlining is the main constraint.
     }),
   ],
   build: {
-    // Helps with single-file by reducing chunking
     modulePreload: false,
     cssCodeSplit: false,
-    assetsInlineLimit: 100000000, // try to inline as much as possible
+    assetsInlineLimit: 100000000,
   },
-})
+}))

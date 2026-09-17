@@ -7,6 +7,7 @@ A beginner astrology instrument. Enter birth data and explore your chart — Swi
 | **Status** | instrument |
 | **House** | Oracle |
 | **Stack** | TypeScript, Vite, Swiss Ephemeris (Moshier / WASM) |
+| **Live** | [supershxck.github.io/compass](https://supershxck.github.io/compass/) |
 
 ## Standalone (recommended)
 
@@ -18,6 +19,8 @@ npm run build:standalone
 ```
 
 Open `dist/compass.html` in any modern browser.
+
+GitHub Pages serves that same build as `index.html`.
 
 ## Development
 
